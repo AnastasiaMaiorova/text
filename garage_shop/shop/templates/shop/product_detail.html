@@ -1,0 +1,20 @@
+{% extends 'shop/index.html' %}
+{% block content %}
+<div class="products">
+<!--  <div class="products_image">-->
+<!--    <img src="{{ product.image.url }}" width="200" height="200">-->
+<!--  </div>-->
+  <div class="products_descriprion">
+    <h3>{{ product.title }}</h3>
+    <p>Артикул: {{ product.artikul}}</p>
+    <p>Цена: {{ product.price }} рублей</p>
+    <p>Описание: <br> {{ product.description }}</p>
+  </div>
+  <div class="img_and_button_cart">
+    <img src="{{ product.image.url }}" width="200" height="200">
+    <a href="{% url 'add_to_cart' ct_model=ct_model slug=product.slug %}"><button class="btn btn-dagner" id="add_to_cart_1">Добавить в корзину</button></a>
+  </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'shop/index.html' %}
+{% block title %}Гараж - магазин{% endblock %}
+{% block content %}
+
+
+<div class="block_product">
+
+  {% for category in categories %}
+    <div class="category_img">
+      <a href="{{ category.get_absolute_url }}"><img class="card-img-top" src="{{ category.image.url }}" width="200" height="200" alt=""></a>
+      <a href="{{ category.get_absolute_url }}"><h3 style="text-align: center;">{{ category.name }}</h3></a>
+    </div>
+  {% endfor %}
+</div>
+
+
+{% endblock %}

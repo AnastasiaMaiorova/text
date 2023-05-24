@@ -1,0 +1,30 @@
+{% extends 'shop/index.html' %}
+{% block title %}Гараж - личный кабинет{% endblock %}
+{% block content %}
+<div class="conteiner_account">
+    <div class="account_user">
+        <h1>Личный кабинет</h1>
+        <p>Вы можете отредактировать свою учетную запись, используя следующую форму:</p>
+        {% if user.is_authenticated %}
+            <form action="{% url 'account' %}" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <p><input type="submit" value="Сохранить"></p>
+            </form>
+        {% else %}
+            Вы не авторизованы, перейдите по ссылке ниже для регистрации
+            <a class="nav-link" href="{% url 'login' %}"><img src=""><i class="fa fa-user-o"></i> Авторизация</a>
+        {% endif %}
+        {% comment %} <form action="." method="post" enctype="multipart/form-data">
+            {{ user_form.as_p }}
+            {{ profile_form.as_p }}
+            {% csrf_token %}
+            <p><input type="submit" value="Сохранить"></p>
+        </form> {% endcomment %}
+
+    </div>
+    <div class="order_user">
+        <h1>Заказы</h1>
+    </div>
+</div>
+{% endblock %}

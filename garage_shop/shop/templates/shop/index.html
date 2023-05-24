@@ -1,0 +1,183 @@
+{% load static %}
+<!--<form action="{% url 'shop' %}" method="post">-->
+    {% csrf_token %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static 'shop/css/index.css' %}" rel="stylesheet" type="text/css" />
+    <!-- bootstrap для картинок -->
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+-->
+    <body>
+        <header>
+
+            <div id="top-header">
+                <ul class="header-links pull-left">
+                    <li><a href=""><i class="fa fa-phone"></i> +7 111 999 99 99</a></li>
+                    <li><a href=""><i class="fa fa-envelope-o"></i> Garaz@garaz_shop.ru</a></li>
+                    <li><a href=""><i class="fa-sharp fa-solid fa-globe"></i> город Москва</a></li>
+                </ul>
+
+                <ul class="header-links pull-right">
+                    {% if user.is_authenticated %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'account' %}"><img src=""><i class="fa fa-user-o"></i> Личный кабинет</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}"><img src=""><i class="fa fa-user-o"></i> Выйти</a></li>
+                    {% else %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}"><img src=""><i class="fa fa-user-o"></i> Авторизация</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'register' %}"><img src=""><i class="fa fa-user-o"></i> Регистрация</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+
+            <div id="header">
+                <div class="container">
+                    <div class="row justify-content-center">
+
+                        <!-- Логотип компании col-md-3-->
+                        <div class="d-inline-block">
+                            <div class="header-logo">
+                                <a href="{% url 'info_shop' %}">
+                                    <p class="fs-1 fst-italic" style="color: #ffffff">ГАРАЖ</p> <!-- сюда можно поставить картинку <img src="путь до картинки" alt="" вместо h1-->
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Корзина -->
+                        <div class="col-15">
+                            <div class="cart">
+                                <a class="fs-5" href="{% url 'cart' %}"><i class="fa fa-shopping-cart" style="color: #ffffff;"> Корзина</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="red"></div>
+
+        </header>
+
+        <nav id="navigation">
+			<div class="container">
+				<div id="responsive-nav">
+					<ul class="main-nav nav navbar-nav">
+						<li class="active"><a href="{% url 'info_shop' %}">Главная страница</a></li>
+						<li><a href="{% url 'about_compony' %}">О компании</a></li>
+						<li><a href="{% url 'product' %}">Магазин</a></li>
+						<li><a href="">Сервис</a></li>
+						<li><a href="">Доставка</a></li>
+						<li><a href="">Контакты</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+        <div class="section">
+			<div class="container">
+				<div class="row2">
+                    <div id="left_text">
+                        {% for category in categories %}
+                        <div class="category_product" style="padding-top: 20px;">
+                            <a href="{{ category.get_absolute_url }}" class="list-group">{{ category.name }}</a></li>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="rigth_text">
+                        {% block content %}
+                        {% endblock %}
+                    </div>
+				</div>
+			</div>
+		</div>
+
+		<div id="newsletter" class="section3">
+			<div class="container">
+				<div class="row3">
+					<div class="col-md-12">
+						<div class="newsletter">
+							<p>Подпишитесь на нашу <strong>РАССЫЛКУ</strong></p>
+							<form>
+								<input class="input" type="email" placeholder="Введите ваш Email">
+								<button class="newsletter-btn"><i class="fa fa-envelope"></i> Подписаться</button>
+							</form>
+							<ul class="newsletter-follow">
+								<li>
+									<a href="https://web.telegram.org/z/"><i class="fa-brands fa-telegram"></i></a>
+								</li>
+								<li>
+									<a href=""><i class="fa fa-instagram"></i></a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
+								</li>
+                                <li>
+                                    <a href="https://github.com/AnastasiaMaiorova/garage_shop"><i class="fa-brands fa-github"></i></a>
+                                </li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="footer" class="section4">
+            <div class="container">
+                <div class="footer-row">
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-title">О нас:</h3>
+                            <ul class="footer-links">
+                                <li><a href=""><i class="fa fa-phone"> +7 111 999 99 99</i></a></li>
+                                <li><a href=""><i class="fa fa-envelope-o"> Garaz@garaz_shop.ru</i></a></li>
+                                <li><a href=""><i class="fa-sharp fa-solid fa-globe"> город Москва</i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-title">Информация:</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">О компании</a></li>
+                                <li><a href="#">Контакты</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-title">Клиентам:</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">Оплата и доставка</a></li>
+                                <li><a href="#">Наши магазины</a></li>
+                                <li><a href="{% url 'account' %}">Личный кабинет</a></li>
+                                <li><a href="{% url 'cart' %}">Корзина</a></li>
+                                <li><a href="#">Документы</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="bottom-footer" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <ul class="footer-payments">
+                            <li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
+                            <li><a href="#"><i class="fa fa-credit-card"></i></a></li>
+                            <li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
+                            <li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </body>
+
+<!--</form>-->
+<!-- для электронных иконок -->
+<script src="https://kit.fontawesome.com/35154ce603.js" crossorigin="anonymous"></script>

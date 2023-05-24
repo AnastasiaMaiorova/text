@@ -1,0 +1,30 @@
+{% extends 'shop/index.html' %}
+{% block title %}Гараж - {% if category %}{{ category.name }}{% else %}магазин{% endif %}{% endblock %}
+{% block content %}
+
+<div class="block_category">
+
+    <p>{{ category.name }}</p>
+
+    <div class="catalog2">
+
+        {% for product in products_category %}
+
+        <div class="img-product" style="width: 250px; height: 350px;">
+            <a href="{{ product.get_absolute_url }}"><img class="card-img-top" src="{{ product.image.url }}" width="200" height="200" alt=""></a>
+<!--        </div>-->
+<!--        <div class="card-body">-->
+            <h4>
+            <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+            </h4>
+            <h5>{{ product.price }} рублей</h5>
+        </div>
+<!--        <div class="button_cart_category">-->
+<!--            <a href=""><button class="btn btn-dagner" id="add_to_cart_2">Добавить в корзину</button></a>-->
+<!--        </div>-->
+
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

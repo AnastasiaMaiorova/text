@@ -1,0 +1,21 @@
+{% extends 'shop/index.html' %}
+{% block title %}Гараж - магазин масел{% endblock %}
+{% block content %}
+
+<div class="product-oil">
+    {% for oil in data %}
+    <div class="img-oils">
+        <a href="{{ oil.get_absolute_url }}"><img class="card-img-top" src="{{ oil.image.url }}" width="200" height="200" alt=""></a>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">
+          <a href="{{ oil.get_absolute_url }}">{{ oil.title }}</a>
+        </h4>
+        <h5>{{ oil.price }} рублей</h5>
+    </div>
+
+    {% endfor %}
+</div>
+
+
+{% endblock %}

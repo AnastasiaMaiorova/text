@@ -1,0 +1,26 @@
+{% extends 'shop/index.html' %}
+{% block title %}Гараж - авторизация{% endblock %}
+{% block content %}
+    {% if form.errors %}
+        <p>
+            Ваше email и пароль не совпадают.
+            Пожалуйста, попробуйте еще раз.
+        </p>
+    {% else %}
+        <p>Пожалуйста, используйте следующую форму для авторизации:</p>
+    {% endif %}
+
+    <div class="login" style="margin-bottom: 20px;">
+        <h1 class="text-center-login">Авторизация</h1>
+        <div class="content-login">
+            <form action="{% url 'login' %}" method="POST">
+                {{ form.as_p }}
+                {% csrf_token %}
+                {% comment %} <input type="hidden" name="next" value="{% url 'info_shop' %}"/> {% endcomment %}
+                <p><input type="submit" class="btn btn-success btn-block" value="Войти"></p>
+            </form>
+        </div>
+
+    </div>
+
+{% endblock %}

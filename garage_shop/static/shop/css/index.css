@@ -1,0 +1,421 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: #333;
+  margin: 0;
+}
+/* 1 контейнер */
+#top-header {
+  padding-bottom: 40px;
+  background-color: #1E1F29;
+}
+
+.header-links li {
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 15px;
+}
+
+.header-links li a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+.header-links li a:hover {
+  color: #D10024;
+}
+
+.header-links li i {
+  color: #D10024;
+  margin-right: 5px;
+}
+
+.pull-left {
+  float: left
+}
+
+.pull-right {
+  float: right;
+}
+
+/* 2 контейнер */
+#header {
+  padding-top: 20px;
+  padding-bottom: 100px;
+  background-color: #15161D;
+}
+
+.header-logo {
+  font-size: 50px;
+  font-family: Brush Script MT, Brush Script Std, cursive;
+  float: left;
+  margin-top: -45px;
+  margin-left: 30px;
+}
+
+.header-logo > a {
+  text-decoration: none;
+}
+
+.cart {
+  float: right;
+  padding: 15px 0px;
+  margin-right: 20px;
+}
+
+.red {
+  padding-top: 2px;
+  padding-bottom: 1px;
+  background-color: #D10024;
+}
+
+/* 3 контейнер */
+#navigation {
+  background: #FFF;
+  border-bottom: 2px solid #E4E7ED;
+  border-top: 3px solid #D10024;
+}
+
+.main-nav > li {
+  color: black;
+  margin-left: 30px;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.main-nav > li > a {
+  color: black;
+  padding: 10px 0px;
+  text-decoration: none;
+}
+
+.main-nav > li > a:hover, .main-nav > li > a:focus {
+  color: #D10024;
+  background-color: transparent;
+}
+
+/* 4 контейнер динамическая */
+.section {
+  background: #FBFBFC;
+  border-bottom: 2px solid #E4E7ED;
+}
+
+.row2{
+  display: flex;
+}
+
+#left_text{
+  margin-left: 40px;
+}
+
+
+
+
+/* 4 контейнер динамическая главная страница вывод категории*/
+
+.category_product{
+  width: 180px;
+  margin-right: 20px;
+}
+
+.category_product a {
+  color: black;
+  text-decoration: none;
+  padding-top: 20px;
+}
+
+/* 4 контейнер динамическая главная страница info_shop*/
+.info_shop {
+
+  margin-right: 30px;
+}
+
+.info_shop > h3 {
+  text-align: center;
+  font-style: italic;
+}
+.info_shop > p {
+  text-align: justify;
+  text-indent: 40px;
+}
+
+
+/* 4 контейнер динамическая регистрация register*/
+.register {
+  margin:0 32% 0 32%;
+  width: 600px;
+
+}
+
+.text-center-register {
+  text-align: center;
+  font-style: italic;
+  margin: 0px;
+  padding-top: 10px;
+}
+
+.content-register label {
+  font-size: 20px;
+  margin-right: 100px; /* Расстояние от текста до текстового поля */
+
+}
+
+.content-register input {
+  padding-left: 10px;
+  width: 500px;
+  height: 30px;
+  margin-right: -4px;
+  border-radius: 40px;
+
+}
+
+.btn {
+  background: #D10024;
+  color: #FFF;
+  border: none;
+  font-weight: 700;
+}
+
+/* 4 контейнер динамическая авторизация login*/
+.login {
+  margin:0 32% 0 32%;
+  width: 600px;
+}
+
+.text-center-login {
+  text-align: center;
+  font-style: italic;
+  margin: 0px;
+  padding-top: 10px;
+}
+
+.content-login label {
+  font-size: 20px;
+  margin-right: 100px; /* Расстояние от текста до текстового поля */
+
+}
+
+.content-login input {
+  padding-left: 10px;
+  width: 500px;
+  height: 30px;
+  margin-right: -4px;
+  border-radius: 40px;
+
+}
+
+/* 4 контейнер динамическая авторизация account.html*/
+.conteiner_account{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.account_user {
+  width: 500px;
+}
+
+.errorlist {
+  color: #FBFBFC;
+}
+
+/* 4 контейнер динамическая авторизация product.html*/
+.block_product {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.category_img {
+  margin: 30px;
+}
+
+.category_img a {
+  color: black;
+  text-decoration: none;
+}
+
+.category_img h3 {
+  color: black;
+  text-decoration: none;
+}
+/* 4 контейнер динамическая авторизация category_detail.html*/
+.catalog2 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.img-product{
+  margin: 30px;
+}
+
+.img-product a {
+  color: black;
+  text-decoration: none;
+}
+
+/* 4 контейнер динамическая авторизация product_detail.html*/
+.products {
+  display: flex;
+  margin-left: 20px;
+}
+
+.products_image {
+  width: 20%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.products_descriprion {
+  width: 80%;
+  margin-left: 20px;
+}
+
+.products_descriprion p {
+  line-height: 1.5;
+  text-align:justify;
+}
+
+.img_and_button_cart{
+  margin: 20px;
+}
+
+.img_and_button_cart img{
+  margin-left: 40px;
+}
+
+#add_to_cart_1 {
+  width: 20%;
+  margin-top: 30px;
+  padding-left: 10px;
+  width: 300px;
+  height: 30px;
+  margin-right: -4px;
+  border-radius: 40px;
+}
+
+
+/* 5 контейнер */
+#newsletter.section3 {
+  margin-top: 30px;
+}
+
+.newsletter {
+  text-align: center;
+}
+
+.newsletter p {
+  font-size: 24px;
+}
+
+.newsletter form {
+  position: relative;
+  max-width: 520px;
+  margin: 30px auto;
+}
+
+.input {
+  width: 300px;
+  height: 40px;
+  margin-right: -4px;
+  border-radius: 40px 0px 0px 40px;
+  padding-left: 10px;
+}
+
+.newsletter-btn {
+  width: 160px;
+  height: 40px;
+  font-weight: 700;
+  background: #D10024;
+  color: #FFF;
+  border: none;
+  border-radius: 0px 40px 40px 0px;
+}
+
+.newsletter-follow li {
+  display: inline-block;
+  margin: 30px;
+}
+.newsletter-follow li a {
+  color: black;
+  font-size: 20px;
+}
+
+.newsletter-follow > li > a:hover, .newsletter-follow > li > a:focus {
+  color: #D10024;
+  background-color: transparent;
+}
+
+/* 6 контейнер */
+#footer.section4 {
+  border-top: 3px solid #D10024;
+}
+
+#footer {
+  background: #15161D;
+  color: #B9BABC;
+}
+
+#bottom-footer {
+  background: #1E1F29;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-title {
+  font-size: 18px;
+  color: #B9BABC;
+  margin-left: 30px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.footer-links li {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.footer-links > li > a {
+  color: #B9BABC;
+  text-decoration: none;
+}
+
+.footer-links li a:hover {
+  color: #D10024;
+}
+
+#bottom-footer{
+  position: relative;
+  top: -16px;
+}
+
+.footer-payments li {
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-bottom: 10px;
+}
+
+.footer-payments li:first-child {
+  margin-left: 400px;
+}
+
+.footer-payments li a {
+  color: #FFF;
+  font-size: 36px;
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+

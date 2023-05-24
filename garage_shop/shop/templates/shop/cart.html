@@ -1,0 +1,32 @@
+{% extends 'shop/index.html' %}
+{% block title %}Гараж - корзина{% endblock %}
+{% block content %}
+
+    <div class="text_cart">
+        <h2>Ваша корзина</h2>
+    </div>
+
+{{ cart.id }}
+
+    <table class="table_cart">
+        <thead>
+            <tr>
+                <th>Наименование товара</th>
+                <th>Цена</th>
+                <th>Количество</th>
+                <th>Общая цена</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart.products.all %}
+                <tr>
+                    <th>{{ item.content_object.title }}</th>
+                    <th>{{ item.content_object.price }}</th>
+                    <th>{{ item.quantity }}</th>
+                    <th>{{ item.final_price }} рублей</th>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
